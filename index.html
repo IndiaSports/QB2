@@ -2,37 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="theme-color" content="#0a0a0a">
-  <title>QB Agency | Ultra Luxury Marketing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="theme-color" content="#07070a">
+  <title>QB Agency | Minimal Luxury</title>
   
-  <!-- Preconnect for speed -->
+  <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  
   <style>
-    :root {
-      --primary: #9370db;
-      --secondary: #c0c0c0;
-      --accent: #ff4ecd;
-      --dark: #0a0a0a;
-      --glass: rgba(255, 255, 255, 0.03);
-      --glass-border: rgba(255, 255, 255, 0.1);
-      --shadow: rgba(147, 112, 219, 0.3);
-    }
-
+    /* ---------- MINIMAL RESET + PERF VARIABLES ---------- */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+      --primary: #a07ee5;
+      --primary-dark: #7c5ac9;
+      --accent: #e47bc9;
+      --glass-bg: rgba(12, 12, 18, 0.65);
+      --border-glow: rgba(160, 126, 229, 0.35);
+      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.25);
+      --transition: 0.2s ease;
     }
 
     html {
@@ -41,41 +37,36 @@
     }
 
     body {
-      font-family: 'Montserrat', sans-serif;
-      background: 
-        radial-gradient(circle at 0% 0%, rgba(147, 112, 219, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 100% 0%, rgba(255, 78, 205, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 50% 100%, rgba(147, 112, 219, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(255, 78, 205, 0.08) 0%, transparent 40%),
-        #050505;
-      background-color: #050505;
-      color: #fff;
+      font-family: 'Inter', sans-serif;
+      background: #07070a;
+      color: #f0f0f0;
       min-height: 100vh;
       overflow-x: hidden;
-      position: relative;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
+    /* Minimal gradient overlay (no heavy noise) */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: -1;
+      background: radial-gradient(circle at 15% 20%, rgba(160,126,229,0.08) 0%, transparent 60%),
+                  radial-gradient(circle at 85% 80%, rgba(228,123,201,0.06) 0%, transparent 55%);
       pointer-events: none;
+      z-index: -1;
     }
 
-    /* Header - Optimized backdrop blur */
+    /* ===== HEADER ===== */
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      padding: 1rem 5%;
-      background: rgba(10, 10, 10, 0.85);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--glass-border);
-      z-index: 1000;
+      padding: 0.9rem 1.8rem;
+      background: rgba(7, 7, 10, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(160,126,229,0.2);
+      z-index: 100;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -83,885 +74,688 @@
 
     .logo {
       font-family: 'Cinzel', serif;
-      font-size: clamp(1.2rem, 4vw, 1.8rem);
-      font-weight: 900;
-      letter-spacing: 2px;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .logo .qb {
-      color: var(--secondary);
-      text-shadow: 0 0 20px rgba(192, 192, 192, 0.5);
-    }
-
-    .logo .agency {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .badge {
-      font-size: 0.6rem;
-      padding: 0.2rem 0.6rem;
-      background: rgba(147, 112, 219, 0.2);
-      border: 1px solid var(--primary);
-      border-radius: 20px;
-      color: var(--primary);
-      font-weight: 600;
+      font-size: 1.5rem;
+      font-weight: 800;
       letter-spacing: 1px;
+      background: linear-gradient(125deg, #e2e2e2, #b8a9ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    /* Main Container */
+    .badge-mini {
+      font-size: 0.7rem;
+      background: rgba(160,126,229,0.2);
+      border: 0.5px solid rgba(160,126,229,0.5);
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      font-weight: 500;
+      color: #cbb8ff;
+    }
+
+    /* ===== MAIN CONTAINER (CLEAN LAYOUT) ===== */
     .container {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 80px 1rem 2rem;
+      padding: 90px 1.5rem 3rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 2rem;
     }
 
-    /* Hero Section */
+    /* HERO SECTION */
     .hero {
       text-align: center;
       width: 100%;
-      position: relative;
     }
 
-    /* Profile Display - Overlapping Circles */
-    .profile-display {
+    /* PROFILE CIRCLES (SMOOTH, GPU ACCELERATED) */
+    .profile-stack {
       position: relative;
-      width: 280px;
-      height: 200px;
-      margin: 0 auto 1.5rem;
+      width: 260px;
+      height: 170px;
+      margin: 0 auto 1.2rem;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .main-circle {
-      width: 160px;
-      height: 160px;
+    .circle-large {
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       overflow: hidden;
       position: absolute;
-      left: calc(50% - 80px - 30px);
+      left: calc(50% - 75px - 25px);
       top: 50%;
       transform: translateY(-50%);
-      border: 3px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 
-        0 0 30px rgba(147, 112, 219, 0.3),
-        inset 0 0 20px rgba(0, 0, 0, 0.3);
-      z-index: 2;
+      border: 2px solid rgba(255,255,255,0.2);
+      box-shadow: 0 10px 28px rgba(160,126,229,0.3);
+      background: #1a1a24;
       will-change: transform;
-      animation: float 6s ease-in-out infinite;
+      animation: subtleFloat 5s ease-in-out infinite;
     }
 
-    .main-circle img {
+    .circle-large img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(1.1) contrast(1.05);
     }
 
-    .video-circle {
-      width: 100px;
-      height: 100px;
+    .circle-small {
+      width: 90px;
+      height: 90px;
       border-radius: 50%;
       overflow: hidden;
       position: absolute;
-      left: calc(50% - 50px + 40px);
+      left: calc(50% - 45px + 32px);
       top: 50%;
       transform: translateY(-50%);
       border: 2px solid var(--primary);
-      box-shadow: 0 0 20px rgba(147, 112, 219, 0.4);
-      z-index: 3;
+      box-shadow: 0 8px 22px rgba(160,126,229,0.5);
+      background: #0a0a0f;
       will-change: transform;
-      animation: float 4s ease-in-out infinite reverse;
+      animation: subtleFloat 4.2s ease-in-out infinite reverse;
     }
 
-    .video-circle video {
+    .circle-small video {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    @keyframes float {
+    @keyframes subtleFloat {
       0%, 100% { transform: translateY(-50%) translateY(0px); }
-      50% { transform: translateY(-50%) translateY(-8px); }
+      50% { transform: translateY(-50%) translateY(-6px); }
     }
 
-    /* Animated Gradient Title */
-    .agency-title {
+    /* MINIMAL TITLE */
+    .luxury-title {
       font-family: 'Cinzel', serif;
-      font-size: clamp(2rem, 8vw, 3.5rem);
-      font-weight: 900;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(
-        90deg,
-        #ffffff 0%,
-        var(--primary) 25%,
-        var(--accent) 50%,
-        var(--primary) 75%,
-        #ffffff 100%
-      );
+      font-size: clamp(2rem, 7vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: 2px;
+      background: linear-gradient(120deg, #ffffff, #c2abff, #e3b0ff);
       background-size: 200% auto;
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
-      animation: shine 3s linear infinite;
-      text-shadow: 0 10px 30px rgba(147, 112, 219, 0.3);
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.3rem;
     }
 
-    @keyframes shine {
-      to { background-position: 200% center; }
+    .tagline {
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      color: rgba(255,255,255,0.65);
+      text-transform: uppercase;
     }
 
-    .subtitle {
-      font-size: clamp(0.9rem, 3vw, 1.1rem);
-      color: rgba(255, 255, 255, 0.7);
-      font-weight: 300;
-      letter-spacing: 2px;
-      margin-bottom: 1.5rem;
-    }
-
-    /* Ultra Stylish Neon Buttons */
-    .buttons-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+    /* ===== BUTTONS SECTION (MOVED ABOVE SERVICES) ===== */
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
       width: 100%;
       max-width: 500px;
-      margin: 0.5rem 0 1rem;
+      margin: 0.8rem 0;
     }
 
-    .luxury-btn {
+    /* PREMIUM NEON BUTTONS (minimal yet animated border + glow) */
+    .neon-btn {
       position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      padding: 1rem 1.5rem;
+      gap: 0.7rem;
+      padding: 0.8rem 1.8rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fff;
+      background: #0c0c12;
       border: none;
       border-radius: 50px;
-      background: linear-gradient(145deg, #0f0f1a, #0a0a0f);
-      color: #fff;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
       cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
       overflow: hidden;
-      text-transform: uppercase;
-      isolation: isolate;
-      transform: translateZ(0);
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
-      box-shadow: 
-        0 4px 15px rgba(0, 0, 0, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      min-width: 170px;
+      backdrop-filter: blur(2px);
+      z-index: 1;
     }
 
-    /* Animated Gradient Border */
-    .luxury-btn::before {
+    /* Animated gradient border (minimal, high performance) */
+    .neon-btn::before {
       content: '';
       position: absolute;
       inset: 0;
       border-radius: 50px;
-      padding: 2px;
-      background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
-      background-size: 200% 100%;
-      animation: borderMove 3s linear infinite;
-      -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-      mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
+      padding: 1.6px;
+      background: linear-gradient(105deg, #a07ee5, #e47bc9, #c77dff);
+      background-size: 180% 180%;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
       pointer-events: none;
+      transition: background-position 0.3s;
+    }
+
+    .neon-btn:hover::before {
+      background-position: 100% 0;
+      animation: borderShift 0.7s linear infinite;
+    }
+
+    @keyframes borderShift {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 200% 0%; }
+    }
+
+    /* glow effect on hover */
+    .neon-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50px;
+      background: radial-gradient(circle at 50% 0%, rgba(160,126,229,0.5), transparent 80%);
+      opacity: 0;
+      transition: opacity 0.25s;
+      pointer-events: none;
+      filter: blur(6px);
       z-index: -1;
     }
 
-    @keyframes borderMove {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 200% 50%; }
+    .neon-btn:hover::after {
+      opacity: 0.8;
     }
 
-    /* Glow Effect */
-    .luxury-btn::after {
-      content: '';
-      position: absolute;
-      inset: -2px;
-      border-radius: 50px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      opacity: 0;
-      filter: blur(15px);
-      z-index: -2;
-      transition: opacity 0.3s ease;
-      transform: translateZ(0);
-    }
-
-    /* Hover Shine Effect */
-    .luxury-btn .shine {
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-      );
-      transition: left 0.6s ease;
-      pointer-events: none;
-    }
-
-    .luxury-btn:hover {
+    .neon-btn:hover {
       transform: translateY(-2px) scale(1.02);
-      box-shadow: 
-        0 8px 25px rgba(147, 112, 219, 0.3),
-        0 0 30px rgba(147, 112, 219, 0.2);
+      box-shadow: 0 8px 20px rgba(160,126,229,0.4);
     }
 
-    .luxury-btn:hover::after {
-      opacity: 0.6;
+    .neon-btn:active {
+      transform: scale(0.98);
     }
 
-    .luxury-btn:hover .shine {
-      left: 100%;
+    .neon-btn i, .neon-btn span {
+      position: relative;
+      z-index: 2;
     }
 
-    .luxury-btn:active {
-      transform: scale(0.98) translateY(0);
-    }
-
-    /* Secondary button variant */
-    .luxury-btn.secondary::before {
-      background: linear-gradient(90deg, rgba(255,255,255,0.4), rgba(147,112,219,0.6), rgba(255,255,255,0.4));
-      background-size: 200% 100%;
-    }
-
-    .luxury-btn.secondary::after {
-      background: linear-gradient(90deg, rgba(255,255,255,0.3), var(--primary));
-    }
-
-    /* Glass Cards - Optimized */
-    .glass-card {
-      background: var(--glass);
+    /* ===== PREMIUM SERVICES CARD (BELOW BUTTONS, refined blur) ===== */
+    .services-card {
+      background: rgba(18, 18, 26, 0.7);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--glass-border);
-      border-radius: 24px;
-      padding: 2rem;
+      border: 1px solid rgba(160,126,229,0.25);
+      border-radius: 32px;
+      padding: 1.8rem;
       width: 100%;
-      max-width: 400px;
-      box-shadow: 
-        0 10px 30px rgba(0, 0, 0, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      max-width: 440px;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .glass-card::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(147, 112, 219, 0.08) 0%, transparent 70%);
-      opacity: 0;
-      transition: opacity 0.3s;
-      pointer-events: none;
-    }
-
-    .glass-card:hover::before {
-      opacity: 1;
-    }
-
-    .glass-card:hover {
+    .services-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 20px 40px rgba(147, 112, 219, 0.15);
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.5);
+      border-color: rgba(160,126,229,0.45);
     }
 
     .card-header {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.9rem;
       margin-bottom: 1.5rem;
-      position: relative;
-      z-index: 1;
     }
 
-    .card-icon {
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      border-radius: 12px;
+    .icon-gem {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(145deg, #2a2338, #17141f);
+      border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.5rem;
-      box-shadow: 0 8px 20px rgba(147, 112, 219, 0.3);
+      color: var(--primary);
+      border: 0.5px solid rgba(160,126,229,0.3);
     }
 
-    .card-title {
+    .card-header h3 {
       font-family: 'Cinzel', serif;
-      font-size: 1.3rem;
-      font-weight: 700;
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -0.2px;
     }
 
     .service-list {
       list-style: none;
-      position: relative;
-      z-index: 1;
     }
 
     .service-list li {
-      padding: 0.8rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 0.7rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
       display: flex;
       align-items: center;
-      gap: 0.8rem;
-      font-size: 0.95rem;
-      color: rgba(255, 255, 255, 0.9);
-      transition: all 0.3s;
+      gap: 0.7rem;
+      font-size: 0.9rem;
+      color: #e2e2e2;
+      transition: padding-left 0.2s;
     }
 
-    .service-list li:last-child {
-      border-bottom: none;
+    .service-list li i {
+      width: 22px;
+      color: var(--primary);
+      font-size: 0.9rem;
     }
 
     .service-list li:hover {
-      color: #fff;
-      transform: translateX(5px);
+      padding-left: 6px;
+      color: white;
     }
 
-    .service-list li::before {
-      content: '✦';
-      color: var(--primary);
-      font-size: 0.8rem;
-    }
-
-    .telegram-handle {
-      margin-top: 1.5rem;
+    .telegram-ref {
+      margin-top: 1.2rem;
       padding-top: 1rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      text-align: center;
-      font-size: 0.9rem;
-      color: var(--primary);
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-
-    /* Warning Message */
-    .warning-strip {
-      width: 100%;
-      max-width: 600px;
-      background: rgba(255, 0, 0, 0.05);
-      border: 1px solid rgba(255, 0, 0, 0.15);
-      border-radius: 12px;
-      padding: 1rem;
       text-align: center;
       font-size: 0.85rem;
-      color: #ff6b6b;
+      color: #b9a6ff;
+      border-top: 1px solid rgba(255,255,255,0.05);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      margin: 0.5rem 0;
-      animation: pulse-border 3s infinite;
+      gap: 8px;
     }
 
-    @keyframes pulse-border {
-      0%, 100% { border-color: rgba(255, 0, 0, 0.15); }
-      50% { border-color: rgba(255, 0, 0, 0.3); }
-    }
-
-    /* Branding Marquee */
-    .branding-marquee {
-      width: 100%;
-      max-width: 600px;
-      height: 50px;
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 25px;
-      overflow: hidden;
-      position: relative;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      display: flex;
+    /* WARNING (minimal) */
+    .warning-chip {
+      background: rgba(255, 70, 110, 0.08);
+      border: 1px solid rgba(255, 90, 120, 0.25);
+      border-radius: 60px;
+      padding: 0.6rem 1.3rem;
+      font-size: 0.7rem;
+      color: #ffafbf;
+      display: inline-flex;
       align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(4px);
+      max-width: 95%;
+      text-align: center;
     }
 
-    .marquee-content {
+    /* MINIMAL MARQUEE */
+    .marquee-strip {
+      width: 100%;
+      max-width: 540px;
+      background: rgba(20,20,28,0.5);
+      border-radius: 60px;
+      overflow: hidden;
+      padding: 0.6rem 0;
+      border: 0.5px solid rgba(160,126,229,0.2);
+    }
+
+    .marquee-track {
       display: flex;
-      will-change: transform;
-      animation: marquee 15s linear infinite;
       white-space: nowrap;
+      will-change: transform;
+      animation: slideText 14s linear infinite;
+      gap: 2rem;
+      width: max-content;
     }
 
-    .marquee-item {
-      padding: 0 3rem;
+    .marquee-track span {
       font-family: 'Cinzel', serif;
-      font-size: 1rem;
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.7);
-      letter-spacing: 2px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: rgba(230,230,250,0.7);
+      padding: 0 1rem;
     }
 
-    @keyframes marquee {
+    @keyframes slideText {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
 
-    /* Floating Action Button */
-    .fab {
+    /* TRUST MINI */
+    .trust-symbols {
+      display: flex;
+      gap: 2rem;
+      color: rgba(255,255,255,0.25);
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.35);
+      padding: 1.2rem 0 0;
+      border-top: 0.5px solid rgba(255,255,255,0.05);
+      width: 100%;
+    }
+
+    /* FAB BUTTON */
+    .fab-minimal {
       position: fixed;
-      bottom: 2rem;
+      bottom: 1.6rem;
       right: 1.5rem;
-      width: 56px;
-      height: 56px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, #7c5ac9, #e47bc9);
+      border-radius: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
+      color: white;
       font-size: 1.3rem;
-      box-shadow: 0 8px 25px rgba(147, 112, 219, 0.4);
+      box-shadow: 0 5px 18px rgba(160,126,229,0.5);
       cursor: pointer;
-      z-index: 999;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
-      animation: fab-pulse 2s infinite;
-      will-change: transform;
+      z-index: 99;
+      transition: transform 0.2s;
+      border: none;
     }
 
-    @keyframes fab-pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(147, 112, 219, 0.5); }
-      70% { box-shadow: 0 0 0 15px rgba(147, 112, 219, 0); }
+    .fab-minimal:hover {
+      transform: scale(1.05);
     }
 
-    .fab:hover {
-      transform: scale(1.1);
-      box-shadow: 0 10px 30px rgba(147, 112, 219, 0.6);
-    }
-
-    /* Popup Modal - Optimized */
+    /* MODAL (CLEAN) */
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(8px);
-      z-index: 2000;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
       display: none;
       align-items: center;
       justify-content: center;
       padding: 1rem;
-      opacity: 0;
-      transition: opacity 0.3s ease;
     }
 
     .modal-overlay.active {
       display: flex;
-      opacity: 1;
     }
 
     .modal-card {
-      background: linear-gradient(145deg, rgba(25, 25, 30, 0.95), rgba(10, 10, 12, 0.98));
-      border: 1px solid rgba(147, 112, 219, 0.25);
-      border-radius: 24px;
-      padding: 2rem;
+      background: #12121a;
+      border: 1px solid rgba(160,126,229,0.5);
+      border-radius: 32px;
+      padding: 1.8rem;
       width: 100%;
-      max-width: 400px;
-      position: relative;
-      transform: scale(0.95) translateY(10px);
-      transition: transform 0.3s ease;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-    }
-
-    .modal-overlay.active .modal-card {
-      transform: scale(1) translateY(0);
-    }
-
-    .modal-header {
+      max-width: 360px;
       text-align: center;
-      margin-bottom: 1.5rem;
+      box-shadow: 0 30px 40px rgba(0,0,0,0.5);
     }
 
-    .modal-icon {
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem;
-      font-size: 1.5rem;
-      box-shadow: 0 10px 30px rgba(147, 112, 219, 0.3);
-    }
-
-    .modal-title {
+    .modal-card h3 {
       font-family: 'Cinzel', serif;
       font-size: 1.5rem;
-      margin-bottom: 0.5rem;
+      margin: 0.5rem 0;
     }
 
-    .price-tag {
+    .price {
       font-size: 2rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #fff, var(--primary));
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff, #c3a6ff);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin: 1rem 0;
+      -webkit-text-fill-color: transparent;
+      margin: 0.8rem 0;
     }
 
-    .close-btn {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      width: 32px;
-      height: 32px;
-      background: rgba(255, 255, 255, 0.1);
+    .close-modal {
+      background: none;
       border: none;
-      border-radius: 50%;
-      color: #fff;
+      color: #aaa;
+      font-size: 1.3rem;
+      position: absolute;
+      top: 12px;
+      right: 18px;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
     }
 
-    .close-btn:hover {
-      background: rgba(255, 0, 0, 0.3);
-      transform: rotate(90deg);
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      color: rgba(255, 255, 255, 0.4);
-      font-size: 0.8rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      margin-top: 1rem;
+    .pay-btn-modal {
+      background: #0c0c12;
+      border: 1px solid #a07ee5;
+      padding: 0.8rem;
       width: 100%;
+      border-radius: 60px;
+      font-weight: 600;
+      color: white;
+      margin-top: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
     }
 
-    .trust-badges {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin: 1rem 0;
-      font-size: 1.5rem;
-      color: rgba(255, 255, 255, 0.3);
+    .pay-btn-modal:hover {
+      background: #a07ee5;
+      color: #0a0a0a;
     }
 
-    /* Responsive */
-    @media (max-width: 480px) {
+    /* RESPONSIVE */
+    @media (max-width: 560px) {
       .container {
-        padding: 70px 1rem 1rem;
+        padding: 80px 1rem 2rem;
         gap: 1.5rem;
       }
-
-      .profile-display {
-        width: 240px;
-        height: 160px;
+      .button-group {
+        gap: 0.9rem;
       }
-
-      .main-circle {
-        width: 130px;
-        height: 130px;
-        left: calc(50% - 65px - 20px);
-        box-shadow: 0 0 20px rgba(147, 112, 219, 0.3);
+      .neon-btn {
+        padding: 0.7rem 1.2rem;
+        min-width: 150px;
+        font-size: 0.75rem;
       }
-
-      .video-circle {
+      .services-card {
+        padding: 1.4rem;
+      }
+      .profile-stack {
+        transform: scale(0.92);
+      }
+      .circle-large {
+        width: 135px;
+        height: 135px;
+        left: calc(50% - 67px - 20px);
+      }
+      .circle-small {
         width: 80px;
         height: 80px;
-        left: calc(50% - 40px + 30px);
-        box-shadow: 0 0 15px rgba(147, 112, 219, 0.3);
+        left: calc(50% - 40px + 25px);
       }
-
-      .buttons-grid {
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-      }
-
-      .luxury-btn {
-        padding: 0.9rem 1.2rem;
-        font-size: 0.85rem;
-      }
-
-      .glass-card {
-        padding: 1.5rem;
-        border-radius: 20px;
-        backdrop-filter: blur(10px);
-      }
-
-      .warning-strip {
-        font-size: 0.75rem;
-        padding: 0.8rem;
-      }
-
-      .branding-marquee {
-        height: 45px;
-      }
-
-      .marquee-item {
-        font-size: 0.9rem;
-        padding: 0 2rem;
+      .fab-minimal {
+        width: 46px;
+        height: 46px;
+        font-size: 1.1rem;
       }
     }
 
-    @media (max-width: 360px) {
-      .agency-title {
-        font-size: 1.8rem;
+    @media (max-width: 420px) {
+      .luxury-title {
+        font-size: 1.9rem;
       }
-
-      .main-circle {
-        width: 120px;
-        height: 120px;
-        left: calc(50% - 60px - 15px);
-      }
-
-      .video-circle {
-        width: 70px;
-        height: 70px;
-        left: calc(50% - 35px + 25px);
+      .neon-btn {
+        min-width: 130px;
       }
     }
 
-    /* Performance optimizations */
-    .gpu-accelerated {
-      transform: translateZ(0);
-      backface-visibility: hidden;
-    }
-    
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-      .marquee-content {
+      .circle-large, .circle-small, .marquee-track {
         animation: none;
-      }
-    }
-
-    /* Touch device optimizations */
-    @media (hover: none) {
-      .luxury-btn:hover {
-        transform: none;
-      }
-      .luxury-btn::after {
-        opacity: 0.3;
       }
     }
   </style>
 </head>
-
 <body>
 
-  <header>
-    <div class="logo">
-      <span class="qb">QB</span>
-      <span class="agency">Agency</span>
-    </div>
-    <div class="badge">#1 LUXURY</div>
-  </header>
+<header>
+  <div class="logo">QB AGENCY</div>
+  <div class="badge-mini">LUXURY</div>
+</header>
 
-  <div class="container">
-    
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="profile-display">
-        <div class="main-circle gpu-accelerated">
-          <img src="https://d1yei2z3i6k35z.cloudfront.net/13184094/696d0df4c0e5c_Gemini_Generated_Image_7vjmc7vjmc7vjmc7.png" 
-               alt="QB Agency" 
-               loading="eager"
-               decoding="async"
-               width="160"
-               height="160">
-        </div>
-        <div class="video-circle gpu-accelerated">
-          <video autoplay muted loop playsinline preload="metadata" 
-                 poster="https://d1yei2z3i6k35z.cloudfront.net/13184094/696d0df4c0e5c_Gemini_Generated_Image_7vjmc7vjmc7vjmc7.png"
-                 width="100" height="100">
-            <source src="https://d1yei2z3i6k35z.cloudfront.net/12037013/68894e0775ab5_Untitledvideo-MadewithClipchamp5.mp4" type="video/mp4">
-          </video>
-        </div>
+<div class="container">
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="profile-stack">
+      <div class="circle-large">
+        <img src="https://d1yei2z3i6k35z.cloudfront.net/13184094/696d0df4c0e5c_Gemini_Generated_Image_7vjmc7vjmc7vjmc7.png" 
+             alt="QB Agency" loading="eager" width="150" height="150">
       </div>
-
-      <h1 class="agency-title">QB Agency</h1>
-      <p class="subtitle">Luxury Marketing & Advertising Solutions</p>
-    </section>
-
-    <!-- Action Buttons - Moved Above Services -->
-    <div class="buttons-grid">
-      <button class="luxury-btn gpu-accelerated" onclick="window.open('/9','_blank')" aria-label="Join Telegram">
-        <i class="fab fa-telegram"></i>
-        <span>Join Telegram</span>
-        <span class="shine"></span>
-      </button>
-      <button class="luxury-btn secondary gpu-accelerated" onclick="window.open('/8','_blank')" aria-label="Chat Now">
-        <i class="fas fa-comment-dots"></i>
-        <span>Chat Now</span>
-        <span class="shine"></span>
-      </button>
-    </div>
-
-    <!-- Services Card - Moved Below Buttons -->
-    <div class="glass-card">
-      <div class="card-header">
-        <div class="card-icon">
-          <i class="fas fa-crown"></i>
-        </div>
-        <div>
-          <div class="card-title">Premium Services</div>
-          <div style="font-size: 0.8rem; color: rgba(255,255,255,0.6);">Elite Growth Solutions</div>
-        </div>
-      </div>
-      
-      <ul class="service-list">
-        <li>High-Converting Facebook Ads</li>
-        <li>Precision Google Ads Campaigns</li>
-        <li>Luxury Landing Pages & Funnels</li>
-        <li>Brand Strategy & Positioning</li>
-      </ul>
-
-      <div class="telegram-handle">
-        <i class="fab fa-telegram"></i>
-        <span>@quicklygrow</span>
+      <div class="circle-small">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="https://d1yei2z3i6k35z.cloudfront.net/12037013/68894e0775ab5_Untitledvideo-MadewithClipchamp5.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
+    <h1 class="luxury-title">QB Agency</h1>
+    <div class="tagline">elite marketing & advertising</div>
+  </section>
 
-    <!-- Warning -->
-    <div class="warning-strip">
-      <i class="fas fa-shield-alt"></i>
-      <span>We don't use WhatsApp. Official: @quicklygrow | Backup: @growshal</span>
-    </div>
-
-    <!-- Branding Marquee -->
-    <div class="branding-marquee">
-      <div class="marquee-content">
-        <span class="marquee-item">QB Agency</span>
-        <span class="marquee-item">#NO.1 AGENCY</span>
-        <span class="marquee-item">LUXURY MARKETING</span>
-        <span class="marquee-item">QB Agency</span>
-        <span class="marquee-item">#NO.1 AGENCY</span>
-        <span class="marquee-item">LUXURY MARKETING</span>
-      </div>
-    </div>
-
-    <!-- Trust Badges -->
-    <div class="trust-badges">
-      <i class="fas fa-check-circle" title="Verified"></i>
-      <i class="fas fa-lock" title="Secure"></i>
-      <i class="fas fa-gem" title="Premium"></i>
-    </div>
-
-    <footer>
-      <p>&copy; 2025 QB Agency. All rights reserved.</p>
-      <p style="margin-top: 0.5rem; font-size: 0.75rem;">Premium Advertising & Marketing Solutions</p>
-    </footer>
+  <!-- BUTTONS SECTION (ABOVE SERVICES) -->
+  <div class="button-group">
+    <button class="neon-btn" onclick="window.open('/9','_blank')">
+      <i class="fab fa-telegram"></i>
+      <span>Join Telegram</span>
+    </button>
+    <button class="neon-btn" onclick="window.open('/8','_blank')">
+      <i class="fas fa-comment-dots"></i>
+      <span>Chat Now</span>
+    </button>
   </div>
 
-  <!-- Floating Action Button -->
-  <div class="fab gpu-accelerated" onclick="openModal()" title="Active Plan" role="button" aria-label="Activate Plan">
-    <i class="fas fa-rocket"></i>
-  </div>
-
-  <!-- Payment Popup -->
-  <div class="modal-overlay" id="popup" onclick="closeModal(event)" role="dialog" aria-modal="true">
-    <div class="modal-card" onclick="event.stopPropagation()">
-      <button class="close-btn" onclick="closeModal()" aria-label="Close popup">
-        <i class="fas fa-times"></i>
-      </button>
-      
-      <div class="modal-header">
-        <div class="modal-icon">
-          <i class="fas fa-bolt"></i>
-        </div>
-        <h3 class="modal-title">Start Your Growth</h3>
-        <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Meta Ads Monthly Setup</p>
+  <!-- PREMIUM SERVICES CARD (MOVED BELOW BUTTONS) -->
+  <div class="services-card">
+    <div class="card-header">
+      <div class="icon-gem">
+        <i class="fas fa-crown"></i>
       </div>
-
-      <div style="text-align: center; margin: 2rem 0;">
-        <div class="price-tag">₹20,000</div>
-        <p style="color: rgba(255,255,255,0.5); font-size: 0.8rem;">One-time setup fee</p>
-      </div>
-
-      <!-- Updated Redirect URL -->
-      <button class="luxury-btn gpu-accelerated" style="width: 100%;" onclick="window.location.href='/paying-ads-setup-charge021/'" aria-label="Pay and Activate Plan">
-        <span>Pay & Active Plan</span>
-        <i class="fas fa-arrow-right"></i>
-        <span class="shine"></span>
-      </button>
+      <h3>Premium Services</h3>
+    </div>
+    <ul class="service-list">
+      <li><i class="fas fa-chart-line"></i> High-Converting Facebook Ads</li>
+      <li><i class="fas fa-chart-simple"></i> Precision Google Ads Campaigns</li>
+      <li><i class="fas fa-palette"></i> Luxury Landing Pages & Funnels</li>
+      <li><i class="fas fa-gem"></i> Brand Strategy & Positioning</li>
+    </ul>
+    <div class="telegram-ref">
+      <i class="fab fa-telegram"></i> @quicklygrow
     </div>
   </div>
 
-  <script>
-    // Popup Logic
-    const popup = document.getElementById('popup');
-    let popupShown = false;
+  <!-- WARNING BANNER -->
+  <div class="warning-chip">
+    <i class="fas fa-shield-alt"></i> We don't use WhatsApp. Official: @quicklygrow | Backup: @growshal
+  </div>
+
+  <!-- MINIMAL MARQUEE -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>QB Agency</span>
+      <span>#NO.1 AGENCY</span>
+      <span>LUXURY MARKETING</span>
+      <span>QB Agency</span>
+      <span>#NO.1 AGENCY</span>
+      <span>LUXURY MARKETING</span>
+      <span>QB Agency</span>
+      <span>#NO.1 AGENCY</span>
+    </div>
+  </div>
+
+  <!-- TRUST BADGES -->
+  <div class="trust-symbols">
+    <i class="fas fa-check-circle"></i>
+    <i class="fas fa-lock"></i>
+    <i class="fas fa-star"></i>
+  </div>
+
+  <footer>
+    <p>© 2025 QB Agency — Luxury Marketing Solutions</p>
+  </footer>
+</div>
+
+<!-- FLOATING BUTTON -->
+<button class="fab-minimal" id="fabBtn">
+  <i class="fas fa-bolt"></i>
+</button>
+
+<!-- POPUP MODAL (UPDATED REDIRECT) -->
+<div class="modal-overlay" id="paymentModal">
+  <div class="modal-card" style="position: relative;">
+    <button class="close-modal" id="closeModalBtn"><i class="fas fa-times"></i></button>
+    <div class="icon-gem" style="margin: 0 auto 0.8rem; width: 55px; height: 55px; border-radius: 30px;">
+      <i class="fas fa-rocket"></i>
+    </div>
+    <h3>Start Your Growth</h3>
+    <p style="color:#aaa; font-size: 0.8rem;">Meta Ads Monthly Setup</p>
+    <div class="price">₹20,000</div>
+    <p style="font-size: 0.7rem; color:#888;">One-time setup fee</p>
+    <!-- UPDATED REDIRECT: /paying-ads-setup-charge021/ -->
+    <button class="pay-btn-modal" id="payNowBtn">
+      Pay & Active Plan <i class="fas fa-arrow-right"></i>
+    </button>
+  </div>
+</div>
+
+<script>
+  (function() {
+    // MODAL LOGIC
+    const modal = document.getElementById('paymentModal');
+    const fab = document.getElementById('fabBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const payBtn = document.getElementById('payNowBtn');
 
     function openModal() {
-      popup.classList.add('active');
+      modal.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
 
-    function closeModal(e) {
-      if (!e || e.target === popup) {
-        popup.classList.remove('active');
-        document.body.style.overflow = '';
-      }
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
     }
 
-    // Show popup after 5 seconds
+    fab.addEventListener('click', openModal);
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // REDIRECT UPDATE: /paying-ads-setup-charge021/
+    if (payBtn) {
+      payBtn.addEventListener('click', () => {
+        window.location.href = '/paying-ads-setup-charge021/';
+      });
+    }
+
+    // Auto popup after 5 sec (only once)
+    let autoShown = false;
     setTimeout(() => {
-      if (!popupShown) {
+      if (!autoShown && modal && !modal.classList.contains('active')) {
         openModal();
-        popupShown = true;
+        autoShown = true;
       }
     }, 5000);
 
-    // Escape key to close modal
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && popup.classList.contains('active')) {
-        closeModal();
+    // Performance: Pause animations when hidden
+    document.addEventListener('visibilitychange', () => {
+      const animatedEls = document.querySelectorAll('.circle-large, .circle-small, .marquee-track');
+      if (document.hidden) {
+        animatedEls.forEach(el => el.style.animationPlayState = 'paused');
+      } else {
+        animatedEls.forEach(el => el.style.animationPlayState = 'running');
       }
     });
 
-    // Performance: Pause animations when tab is hidden
-    document.addEventListener('visibilitychange', () => {
-      const animatedElements = document.querySelectorAll('.marquee-content, .main-circle, .video-circle, .fab');
-      animatedElements.forEach(el => {
-        el.style.animationPlayState = document.hidden ? 'paused' : 'running';
-      });
+    // Touch optimizations, smooth buttons
+    const btns = document.querySelectorAll('.neon-btn');
+    btns.forEach(btn => {
+      btn.addEventListener('touchstart', () => {}, { passive: true });
     });
-
-    // Touch device detection for optimizations
-    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-      document.body.classList.add('touch-device');
-    }
-  </script>
-
+  })();
+</script>
 </body>
 </html>
