@@ -183,11 +183,11 @@ src="https://www.facebook.com/tr?id=3379483415561840&ev=PageView&noscript=1"
   </svg>
 
   <script>
-    setTimeout(()=>{document.getElementById('popupModal').style.display='flex'},6000);
+    setTimeout(()=>{document.getElementById('popupModal').style.display='flex'},10000);
     function closePopup(){document.getElementById('popupModal').style.display='none'}
     document.getElementById('popupModal').addEventListener('click',(e)=>{if(e.target===document.getElementById('popupModal'))closePopup()});
     const miniBtn=document.getElementById("miniBtn");
-    function cycleMiniBtn(){miniBtn.classList.remove("hide");setTimeout(()=>miniBtn.classList.add("hide"),7000);setTimeout(()=>miniBtn.classList.remove("hide"),10000)}
+    function cycleMiniBtn(){miniBtn.classList.remove("hide");setTimeout(()=>miniBtn.classList.add("hide"),11000);setTimeout(()=>miniBtn.classList.remove("hide"),10000)}
     cycleMiniBtn();setInterval(cycleMiniBtn,13000);
   </script>
 </body>
